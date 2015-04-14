@@ -94,10 +94,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/thermal-engine-8974.conf:system/etc/thermal-engine-8974.conf
 
-# For SPN display
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/spn-conf.xml:system/etc/spn-conf.xml
-
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
@@ -228,10 +224,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
-# Filesystem management tools
-PRODUCT_PACKAGES += \
-    e2fsck
-
 # for off charging mode
 PRODUCT_PACKAGES += \
     charger_res_images
@@ -244,7 +236,7 @@ PRODUCT_PACKAGES += \
 
 # QCOM Perf lib
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.extension_library=/vendor/lib/libqc-opt.so
+    ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608
