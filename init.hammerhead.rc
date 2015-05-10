@@ -206,9 +206,6 @@ on post-fs-data
 
     setprop vold.post_fs_data_done 1
 
-on property:ro.crypto.state=encrypted
-    write /sys/class/graphics/fb0/idle_pc 0
-
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
 
@@ -346,7 +343,7 @@ service qseecomd /system/bin/qseecomd
 service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
     class late_start
 
-service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbdisk /storage/usbdisk
+service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -w 1023 /mnt/media_rw/usbdisk /storage/usbdisk
     class late_start
     disabled
 
