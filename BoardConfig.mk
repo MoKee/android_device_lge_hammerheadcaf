@@ -127,7 +127,6 @@ BOARD_SEPOLICY_UNION += \
     bluetooth_loader.te \
     bootanim.te \
     bridge.te \
-    domain.te \
     file.te \
     healthd.te \
     hostapd.te \
@@ -159,9 +158,8 @@ HAVE_ADRENO_SOURCE:= false
 OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
-# QCOM PowerHAL
-TARGET_POWERHAL_VARIANT := qcom
-TARGET_POWERHAL_SET_INTERACTIVE_EXT := device/lge/hammerheadcaf/power/power_ext.c
+# Local QCOM PowerHAL
+TARGET_POWERHAL_VARIANT := hammerhead
 
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY:= true
 USE_DEVICE_SPECIFIC_CAMERA:= true
