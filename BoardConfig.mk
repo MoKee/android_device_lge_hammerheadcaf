@@ -107,7 +107,6 @@ COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 COMMON_GLOBAL_CPPFLAGS += -DNO_SECURE_DISCARD
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
-BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 TARGET_RECOVERY_FSTAB = device/lge/hammerheadcaf/fstab.hammerhead
 
@@ -146,5 +145,7 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 
 # Hardware
 BOARD_HARDWARE_CLASS := device/lge/hammerheadcaf/mkhw
+
+USE_CLANG_PLATFORM_BUILD := true
 
 -include vendor/lge/hammerheadcaf/BoardConfigVendor.mk
