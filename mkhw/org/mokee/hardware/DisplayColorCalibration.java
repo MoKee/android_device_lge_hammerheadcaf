@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2014 The MoKee Open Source Project
+ * Copyright (C) 2016 The CyanogenMod Project
+ * Copyright (C) 2016 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,14 +17,13 @@
 
 package org.mokee.hardware;
 
-import org.mokee.hardware.util.FileUtils;
-import java.io.File;
+import org.mokee.internal.util.FileUtils;
 
 public class DisplayColorCalibration {
     private static final String COLOR_FILE = "/sys/devices/virtual/graphics/fb0/rgb";
 
     public static boolean isSupported() {
-        return new File(COLOR_FILE).exists();
+        return FileUtils.isFileWritable(COLOR_FILE);
     }
 
     public static int getMaxValue() {
