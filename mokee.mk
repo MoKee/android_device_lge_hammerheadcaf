@@ -17,8 +17,8 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit some common MK stuff.
+$(call inherit-product, vendor/mk/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/lge/hammerheadcaf/device.mk)
@@ -27,7 +27,7 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := hammerheadcaf
-PRODUCT_NAME := cm_hammerheadcaf
+PRODUCT_NAME := mk_hammerheadcaf
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Nexus 5 CAF
 PRODUCT_MANUFACTURER := LGE
