@@ -40,7 +40,7 @@ TARGET_USE_SDCLANG := true
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=hammerhead user_debug=31 msm_watchdog_v2.enable=1 mdss_mdp.panel=dsi
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=hammerhead user_debug=31 msm_watchdog_v2.enable=1 mdss_mdp.panel=dsi androidboot.bootdevice=msm_sdcc.1
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 TARGET_KERNEL_SOURCE := kernel/lge/hammerheadcaf
@@ -69,7 +69,8 @@ USE_DEVICE_SPECIFIC_CAMERA:= true
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # MK Hardware
-BOARD_HARDWARE_CLASS := $(PLATFORM_PATH)/mkhw
+BOARD_USES_MOKEE_HARDWARE := true
+BOARD_HARDWARE_CLASS := hardware/mokee/mkhw
 
 # Display
 USE_OPENGL_RENDERER := true
@@ -79,6 +80,7 @@ HAVE_ADRENO_SOURCE:= false
 OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
+TARGET_HAS_HH_VSYNC_ISSUE := true
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 
