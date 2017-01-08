@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2016 The CyanogenMod Project
+#           (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -25,7 +26,7 @@ $(call inherit-product, device/lge/hammerheadcaf/device.mk)
 
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
-## Device identifier. This must come after all inclusions
+# Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := hammerheadcaf
 PRODUCT_NAME := mk_hammerheadcaf
 PRODUCT_BRAND := google
